@@ -20,7 +20,6 @@ setup(
               'paginator', 'economy', 'reaction', 'reaction roles', 'database', 'database manager'],
     install_requires=[
         'youtube-dl',
-        'discord.py',
         'Pillow',
         'requests',
         'spotipy',
@@ -28,7 +27,6 @@ setup(
         'motor',
         'aiopg',
         'aiomysql',
-        'discord_components',
         'pytz'
     ],
     classifiers=[  # Optional
