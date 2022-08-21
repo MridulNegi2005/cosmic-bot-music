@@ -23,10 +23,6 @@ setup(
         'Pillow',
         'requests',
         'spotipy',
-        'aiosqlite',
-        'motor',
-        'aiopg',
-        'aiomysql',
     ],
     classifiers=[  # Optional
         # How mature is this project? Common values are
