@@ -27,7 +27,6 @@ setup(
         'motor',
         'aiopg',
         'aiomysql',
-        'pytz'
     ],
     classifiers=[  # Optional
         # How mature is this project? Common values are
