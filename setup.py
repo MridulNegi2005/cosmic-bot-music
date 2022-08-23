@@ -20,9 +20,16 @@ setup(
               'paginator', 'economy', 'reaction', 'reaction roles', 'database', 'database manager'],
     install_requires=[
         'youtube-dl',
+        'discord.py',
         'Pillow',
         'requests',
         'spotipy',
+        'aiosqlite',
+        'motor',
+        'aiopg',
+        'aiomysql',
+        'discord_components',
+        'pytz'
     ],
     classifiers=[  # Optional
         # How mature is this project? Common values are
