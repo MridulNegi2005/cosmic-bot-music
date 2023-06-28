@@ -110,7 +110,7 @@ class Player(discord.PCMVolumeTransformer):
 
     __slots__ = ("data", "title", "stream_url", "url", "start_timestamp", "last_pause_timestamp", "duration")
 
-    def __init__(self, source, requester: discord.Member, *, data, volume=0.1):
+    def __init__(self, source, requester: discord.Member, *, data, volume=0.5):
         super().__init__(source, volume)
 
         self.data = data
@@ -338,6 +338,7 @@ class MusicManager(EventManager):
 
             player.volume = self.queue[ctx.guild.id].volume
             ctx.voice_client.play(player, after=lambda x: self.bot.loop.create_task(self.__check_queue(ctx)))
+            print("Here 2)")
             player.start_timestamp = time.time()
 
             if self.queue[ctx.guild.id].loop == Loops.NO_LOOP:
@@ -387,6 +388,7 @@ class MusicManager(EventManager):
         try:
             loop = asyncio.get_event_loop()
             return await loop.run_in_executor(None, lambda: YTDL.extract_info(query, download=False))
+            print("Here 1)")
         except youtube_dl.utils.DownloadError:
             print("Download error")
             return None
@@ -504,6 +506,7 @@ class MusicManager(EventManager):
 
         if player is not None:
             ctx.voice_client.play(player)
+            print("Here")
             return True
 
         if not ctx.voice_client.is_playing():
