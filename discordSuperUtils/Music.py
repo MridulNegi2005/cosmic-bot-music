@@ -388,6 +388,7 @@ class MusicManager(EventManager):
             loop = asyncio.get_event_loop()
             return await loop.run_in_executor(None, lambda: YTDL.extract_info(query, download=False))
         except youtube_dl.utils.DownloadError:
+            print("Download error")
             return None
 
     async def create_player(self, query: str, requester: discord.Member) -> List[Player]:
