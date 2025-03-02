@@ -19,7 +19,7 @@ setup(
     keywords=['discord', 'easy', 'discord.py', 'music', 'download', 'links', 'images', 'videos', 'audio', 'bot',
               'paginator', 'economy', 'reaction', 'reaction roles', 'database', 'database manager'],
     install_requires=[
-        'youtube-dl',
+        'yt_dlp',
         'Pillow',
         'requests',
         'spotipy',
