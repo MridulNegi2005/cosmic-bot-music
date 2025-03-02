@@ -15,7 +15,7 @@ from typing import (
 
 import aiohttp
 import discord
-import youtube_dl
+import yt_dlp
 
 from .Base import EventManager
 from .Spotify import SpotifyClient
@@ -26,7 +26,7 @@ if TYPE_CHECKING:
 
 FFMPEG_OPTIONS = {'before_options': '-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5', 'options': '-vn'}
 SPOTIFY_RE = re.compile("^https://open.spotify.com/")
-YTDL = youtube_dl.YoutubeDL({
+YTDL = yt_dlp.YoutubeDL({
     'format': 'bestaudio/best',
     'restrictfilenames': True,
     'noplaylist': False,
@@ -389,7 +389,7 @@ class MusicManager(EventManager):
             loop = asyncio.get_event_loop()
             return await loop.run_in_executor(None, lambda: YTDL.extract_info(query, download=False))
             print("Here 1)")
-        except youtube_dl.utils.DownloadError:
+        except yt_dlp.utils.DownloadError:
             print("Download error")
             return None
 
